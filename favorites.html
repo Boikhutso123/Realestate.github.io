@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+
+header {
+            padding: 100px;
+            color: white;
+            background-color: red;
+        }
+
+.RElg{
+  width: 200px;
+  border: solid white;
+  border-radius: 5px;
+  border-style: inset;
+}
+
+          nav {
+              background-color: #444;
+              padding: 10px;
+              text-align: center;
+          }
+          nav a {
+              color: #fff;
+              text-decoration: none;
+              padding: 10px 20px;
+              margin: 0 5px;
+              border-radius: 5px;
+          }
+          nav a:hover {
+              background-color: #f70000;
+          }        
+
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .favorites-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .box {
+            width: 300px;
+            height: 400px;
+            border: solid black;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-color: #fff;
+        }
+        .box img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 10px;
+        }
+        .box button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .property-details {
+            text-align: center;
+        }
+        .property-details p {
+            margin: 5px 0;
+        }
+
+        footer{
+          color: white;
+          margin-top: 500px;
+          padding: 10px;
+          font-size: 20px;
+          background-color: black;
+       }
+
+    </style>
+</head>
+<body>
+
+    <header align="center">
+        <div class="RElg">
+        <h1>Real Estate Unlimited</h1>
+        </div>
+    </header>
+    
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="Property-details.html">Property-details</a>
+        <a href="about.html">About us</a>
+        <a href="contact-us.html">Contact-us</a>
+      </nav>
+
+    <h1>Favorites</h1>
+    <div class="favorites-list" id="favorites-list">
+        <!-- Favorite properties will be added here -->
+    </div>
+    <script src="favorites.js"></script>
+
+    <footer align="center"> 
+        <p>&copy;<b>2024 Real Estate Unlimited All rights reserved.</b></p>
+    </footer>
+    
+
+</body>
+</html>

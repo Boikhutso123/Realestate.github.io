@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Property</title>
+    <style>
+        header {
+            padding: 100px;
+            color: white;
+            background-color: red;
+        }
+
+        .RElg {
+            width: 200px;
+            border: solid white;
+            border-radius: 5px;
+            border-style: inset;
+        }
+
+        nav {
+            padding: 10px;
+            text-align: center;
+            background-color: #444;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #f70000;
+        }
+
+        footer {
+            color: white;
+            margin-top: 50px;
+            padding: 10px;
+            font-size: 20px;
+            background-color: black;
+        }
+
+        form {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        form input, form button, form textarea {
+            display: block;
+            width: calc(100% - 22px);
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        #message {
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header align="center">
+        <div class="RElg">
+            <h1>Real Estate Unlimited</h1>
+        </div>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About us</a>
+        <a href="contact-us.html">Contact us</a>
+    </nav>
+
+    <form id="propertyForm">
+        <h2>Add Property</h2>
+        <input type="text" id="propertyName" placeholder="Property Name (e.g., Cozy Apartment)" required>
+        <input type="text" id="propertyImage" placeholder="Image URL (e.g., http://example.com/image.jpg)" required>
+        <input type="text" id="propertyAddress" placeholder="Property Address" required>
+        <input type="text" id="propertyPrice" placeholder="Property Price" required>
+        <textarea id="propertyDescription" placeholder="Property Description" required></textarea>
+        <textarea id="propertyExtraInfo" placeholder="Additional Information (e.g., Nearby schools, public transport)" required></textarea>
+        <button type="submit">Add Property</button>
+        <p id="message"></p>
+    </form>
+
+    <footer align="center">
+        <p>&copy; <b>2024 Real Estate Unlimited All rights reserved.</b></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

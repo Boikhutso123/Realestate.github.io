@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        header {
+            padding: 100px;
+            color: white;
+            background-color: red;
+        }
+
+       .RElg{
+       width: 200px;
+       border: solid white;
+       border-radius: 5px;
+       border-style: inset;
+       }
+
+        nav {
+            padding: 10px;
+            text-align: center;
+            background-color: #444;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #f70000;
+        }  
+        
+        .intpic {
+            width: 400px;
+            display: flex;
+            justify-content: space-between;
+            margin: 3px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 50px;
+            color: white;
+            font-size: larger;
+            background-color: black;
+        }
+
+        .boxs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .box {
+            width: 300px;
+            height: 400px;
+            border: solid black;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-color: #fff;
+        }
+
+        .box img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 10px;
+        }
+
+        .box .buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .box button {
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .box .edit-btn {
+            background-color: blue;
+        }
+
+        .box .favorite-btn {
+            background-color: yellow;
+            color: black;
+        }
+
+        .add-property {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .edit-form {
+            display: none;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .edit-form input, .edit-form button, .edit-form textarea {
+            display: block;
+            width: calc(100% - 22px);
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .edit-form button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+        }
+
+        .edit-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .property-details {
+            text-align: center;
+        }
+
+        .property-details p {
+            margin: 5px 0;
+        }
+
+        .search-filters {
+            display: flex;
+            gap: 10px;
+            margin: 20px;
+        }
+
+        .search-filters input, .search-filters select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-filters button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+
+        .search-filters button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <header align="center">
+        <div class="RElg">
+        <h1>Real Estate Unlimited</h1>
+        </div>
+      </header>
+    <nav>
+        <a href="Property-details.html">Property details</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="about.html">About us</a>
+        <a href="contact-us.html">Contact us</a>
+    </nav>
+
+    <div class="intpic">
+        <img class="intpic" src="4realestatewebhp.jpg" alt="image of a mansion">
+        <img class="intpic" src="4realestatewebhp2.jpg" alt="image of a mansion">
+        <img class="intpic" src="4realestatewebhp3.jpeg" alt="image of a mansion">
+    </div>
+      
+    <p>Here you can find your dream property that's within your budget.</p>
+    <p>With a wide variety of properties there's a home for everyone.</p><br>
+    <p>The properties on display are location specific and limited.</p>
+
+    <div class="search-filters">
+        <input type="text" id="searchLocation" placeholder="Location">
+        <input type="number" id="searchMinPrice" placeholder="Min Price">
+        <input type="number" id="searchMaxPrice" placeholder="Max Price">
+        <select id="searchPropertyType">
+            <option value="">All Types</option>
+            <option value="apartment">Apartment</option>
+            <option value="house">House</option>
+            <option value="condo">Condo</option>
+        </select>
+        <button onclick="filterProperties()">Search</button>
+    </div>
+
+    <a href="add-property.html" class="add-property">Add Property</a>
+    <div class="boxs" id="property-list">
+        <!-- This is where Property boxes will be added-->
+    </div>
+
+    <div class="edit-form" id="editForm">
+        <h2 id="form-title">Edit Property</h2>
+        <input type="text" id="editPropertyName" placeholder="Property Name (e.g., Cozy Apartment)">
+        <input type="text" id="editPropertyImage" placeholder="Image URL (e.g., http://example.com/image.jpg)">
+        <input type="text" id="editPropertyAddress" placeholder="Property Address">
+        <input type="text" id="editPropertyPrice" placeholder="Property Price">
+        <textarea id="editPropertyDescription" placeholder="Property Description"></textarea>
+        <textarea id="editPropertyExtraInfo" placeholder="Additional Information (e.g., Nearby schools, public transport)"></textarea>
+        <button type="button" onclick="saveEdit()">Save</button>
+    </div>
+
+    <footer align="center">
+        <p>&copy; <b>2024 Real Estate Unlimited All rights reserved.</b></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
